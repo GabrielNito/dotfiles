@@ -1,0 +1,71 @@
+<!--
+       /$$                                 /$$
+      | $$                                | $$
+  /$$$$$$$ /$$   /$$ /$$$$$$$   /$$$$$$$ /$$$$$$    /$$$$$$   /$$$$$$$
+ /$$__  $$| $$  | $$| $$__  $$ /$$_____/|_  $$_/   /$$__  $$ /$$_____/
+| $$  | $$| $$  | $$| $$  \ $$|  $$$$$$   | $$    | $$  \__/| $$
+| $$  | $$| $$  | $$| $$  | $$ \____  $$  | $$ /$$| $$      | $$
+|  $$$$$$$|  $$$$$$/| $$  | $$ /$$$$$$$/  |  $$$$/| $$      |  $$$$$$$
+ \_______/ \______/ |__/  |__/|_______/    \___/  |__/       \_______/
+-->
+
+[global] # Display
+monitor = 0
+follow = mouse
+
+    # Geometry
+    width = 300
+    height = 100
+    origin = top-center
+    offset = 0x30
+    scale = 0
+
+    # Appearance
+    font = monospace 10
+    frame_width = 1
+    corner_radius = 10
+    padding = 12
+    horizontal_padding = 12
+
+    # Rich text and icons
+    markup = full
+    format = "<b>%s</b>\n%b"
+    icon_position = left
+    min_icon_size = 32
+    max_icon_size = 48
+
+    # Actions
+    mouse_left_click = close_current
+    mouse_middle_click = do_action
+    mouse_right_click = close_all
+
+    # Images
+    enable_recursive_icon_lookup = true
+    icon_theme = "Papirus-Dark"
+
+    # Additional styling
+    separator_height = 2
+    separator_color = frame
+
+[urgency_low]
+background = "#303446"
+foreground = "#c6d0f5"
+frame_color = "#303446"
+timeout = 5
+
+[urgency_normal]
+background = "#303446"
+foreground = "#c6d0f5"
+frame_color = "#303446"
+timeout = 5
+
+[urgency_critical] # Red alert styling
+background = "#e78284" # Red background
+foreground = "#ffffff" # White text for better contrast
+frame_color = "#ea999c" # Lighter red frame
+timeout = 0
+
+[discord-notifications]
+appname = "Discord"
+format = "<b>%s</b>\n%b"
+script = ~/.config/dunst/discord_filter.sh
